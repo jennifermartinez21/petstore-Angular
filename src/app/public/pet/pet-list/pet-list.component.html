@@ -1,0 +1,16 @@
+<h4>Pets List</h4>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+        *ngFor="let pet of pets; let i = index">
+        <h1 href="/pets/{{ pet.id }}">{{ pet.name }}</h1>
+        <p>${{pet.price }}</p>
+        <div class="image-parent">
+          <p>
+            <a href="/pets/{{ pet.id }}">
+              <img src="/assets/images/{{ pet.photourl }}" class="img-fluid" alt="{{ pet.name }}" height="100" width="100">
+            </a>
+          </p>
+        </div>
+      </li>
+    </ul>
+

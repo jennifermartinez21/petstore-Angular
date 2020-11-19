@@ -1,0 +1,55 @@
+<div style="width: 500px; margin: auto;">
+    <h1>Create new Pet</h1>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" placeholder="Name pet" class="form-control" id="name" required [(ngModel)]="pet.name" name="name"/>
+        </div>
+  
+        <div class="form-group">
+          <label for="photourl">PhotoUrl</label>
+          <input class="form-control" placeholder="PhotoUrl" id="photourl" required [(ngModel)]="pet.photourl" name="photourl"/>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input class="form-control" placeholder="Price" id="price" required [(ngModel)]="pet.price" name="price"/>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="true" id="status" required [(ngModel)]="pet.status">
+            <label class="form-check-label" for="status">
+              Status
+            </label>
+        </div>
+
+        <div class="form-group">
+          <label>Categoria</label>
+            <select class="form-control" id="category" required [(ngModel)]="pet.categoryDTO">
+              <option [ngValue]="cat" *ngFor="let cat of category">
+                 {{cat.name}}
+             </option>
+            </select>
+            <input ng-hide="Cathide" id="idCateg" type="hidden" name="Caat" required [(ngModel)]="pet.categoryDTO.id" value="{{pet.categoryDTO.id}}"/>
+          </div>
+
+          <div class="form-group">
+            <label>Tag</label>
+            <select class="form-control" id="tag" required [(ngModel)]="pet.tagDTO">
+              <option [ngValue]="tag" *ngFor="let tag of tags">
+                 {{tag.name}}
+             </option>
+            </select>
+            <input ng-hide="taghide" id="idTag" type="hidden" name="taag" required [(ngModel)]="pet.tagDTO.id" value="{{pet.tagDTO.id}}"/>
+          </div>
+  
+        <button (click)="savePet()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>You submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newPet()">Add</button>
+      </div>
+    </div>
+  </div>

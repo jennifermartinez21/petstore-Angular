@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;">
+    <img src="/assets/images/{{ pet.photourl }}" class="card-img-top" alt="{{ pet.name}}">
+    <div class="card-body">
+      <h5 class="card-title">{{ pet.name }}</h5>
+      <p class="card-text">La mascota ideal para tu hogar.</p>
+      <p>${{ pet.price }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Excelente mascota</li>
+      <li class="list-group-item">Buen acompañante</li>
+      <li class="list-group-item">#{{ pet.tagDTO.name }}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
